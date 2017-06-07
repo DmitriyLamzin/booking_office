@@ -1,32 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>booking_office</artifactId>
         <groupId>com.github.dmitriylamzin</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
-    <packaging>ejb</packaging>
-    <artifactId>booking_office_ejb</artifactId>
-    <name>booking_office_ejb</name>
+    <artifactId>booking_office_web_client</artifactId>
+    <packaging>war</packaging>
+    <name>booking_office_web_client</name>
 
     <dependencies>
         <dependency>
             <groupId>com.github.dmitriylamzin</groupId>
             <artifactId>booking_office_client</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-            <scope>provided</scope>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
+
             <groupId>org.jboss.spec.javax.ejb</groupId>
             <artifactId>jboss-ejb-api_3.2_spec</artifactId>
             <scope>provided</scope>
@@ -37,7 +30,16 @@
             <artifactId>jboss-logging</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -46,7 +48,7 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>1.0.2.Final</version>
                 <configuration>
-                    <filename>${project.build.finalName}.jar</filename>
+                    <filename>${project.build.finalName}.war</filename>
                 </configuration>
             </plugin>
             <plugin>
@@ -58,16 +60,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-ejb-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <ejbVersion>3.2</ejbVersion>
-                    <generateClient>true</generateClient>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-
 </project>

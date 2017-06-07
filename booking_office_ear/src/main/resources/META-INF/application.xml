@@ -1,0 +1,20 @@
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+              http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd"
+             version="7">
+    <display-name>booking_office_ear</display-name>
+    <module>
+        <java>booking_office_client.jar</java>
+    </module>
+    <module>
+        <ejb>booking_office_ejb.jar</ejb>
+    </module>
+    <module>
+        <web>
+            <web-uri>booking_office_web_client.war</web-uri>
+            <context-root>/</context-root>
+        </web>
+    </module>
+    <library-directory>lib</library-directory>
+</application>
