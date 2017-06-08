@@ -23,20 +23,10 @@ public class Info {
     @Inject
     private TheatreBoxRemote box;
 
-    private Collection<Seat> seats;
-
-    @PostConstruct
-    public void retrieveAllSeatsOrderedByName() {
-        seats = box.getSeats();
-    }
-
     @Produces
     @Named
     public Collection<Seat> getSeats() {
-        return new ArrayList<>(seats);
+        return new ArrayList<>(box.getSeats());
     }
 
-    public void onMemberListChanged(@Observes final Seat member) {
-        retrieveAllSeatsOrderedByName();
-    }
 }

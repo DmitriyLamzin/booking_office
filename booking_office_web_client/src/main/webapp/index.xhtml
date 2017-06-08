@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <h1>TicketBooker Machine</h1>
+        <h:form id="reg">
+            <h3>Money: $ #{theatreBookerClient.money}</h3>
+            <h:messages errorClass="error" infoClass="info"
+                        globalOnly="true"/>
+            <h:panelGrid columns="1" border="1" styleClass="smoke">
+                <h:dataTable var="_seat" value="#{seats}"
+                             rendered="#{not empty seats}"
+                             styleClass="simpletablestyle">
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{_seat.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{_seat.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Price</f:facet>
+                        #{_seat.price}$
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Booked</f:facet>
+                        #{_seat.booked}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Action</f:facet>
+                        <h:commandButton id="book"
+                                         action="#{theatreBookerClient.bookSeat(_seat.id)}"
+                                         disabled="#{_seat.booked}"
+                                         value="#{_seat.booked ? 'Reserved' : 'Book'}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
