@@ -11,7 +11,7 @@
         <module>booking_office_ejb</module>
         <module>booking_office_ejb_command_line_client</module>
         <module>booking_office_web_client</module>
-        <module>booking_office_client</module>
+        <module>booking_office_model</module>
         <module>booking_office_ear</module>
     </modules>
     <packaging>pom</packaging>

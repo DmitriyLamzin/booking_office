@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.dmitriylamzin</groupId>
-            <artifactId>booking_office_client</artifactId>
+            <artifactId>booking_office_model</artifactId>
             <version>${project.version}</version>
         </dependency>
 

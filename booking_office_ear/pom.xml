@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.dmitriylamzin</groupId>
-            <artifactId>booking_office_client</artifactId>
+            <artifactId>booking_office_model</artifactId>
             <version>${parent.version}</version>
             <type>jar</type>
         </dependency>
@@ -69,8 +69,8 @@
                     <modules>
                         <jarModule>
                             <groupId>com.github.dmitriylamzin</groupId>
-                            <artifactId>booking_office_client</artifactId>
-                            <bundleFileName>booking_office_client.jar</bundleFileName>
+                            <artifactId>booking_office_model</artifactId>
+                            <bundleFileName>booking_office_model.jar</bundleFileName>
                         </jarModule>
                         <ejbModule>
                             <groupId>com.github.dmitriylamzin</groupId>
