@@ -2,11 +2,8 @@ package com.github.dmitriylamzin.client.web;
 
 
 import com.github.dmitriylamzin.domain.Seat;
-
 import com.github.dmitriylamzin.service.TheatreBoxRemote;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
